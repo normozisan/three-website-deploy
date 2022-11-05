@@ -9,7 +9,8 @@ const scene = new THREE.Scene();
 
 //背景用のテクスチャー
 const textureLoader = new THREE.TextureLoader();
-const bgTexture = textureLoader.load("bg/bg.jpg");
+const fullPath = `https://${import.meta.env.VITE_PUBLIC_VERCEL_URL}` || 'http://localhost:5173';
+const bgTexture = textureLoader.load(`${fullPath}/bg/bg.jpg`);
 scene.background = bgTexture;
  
 //サイズ
